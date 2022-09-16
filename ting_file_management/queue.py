@@ -8,11 +8,10 @@ class Queue:
     def enqueue(self, value):
         return self.data.append(value)
 
-
     def dequeue(self):
         if (len(self.data) == 0):
             raise IndexError
-        return self.data.pop(0) 
+        return self.data.pop(0)
 
     def search(self, index):
         if (index < 0):
