@@ -35,4 +35,17 @@ def remove(instance):
 
 
 def file_metadata(instance, position):
-    """Aqui irá sua implementação"""
+    if (position < 0 or position > len(instance)-1):
+        sys.stderr.write("Posição inválida")
+    else:
+        path_file = instance.search(position)
+
+        file = txt_importer(path_file)
+
+        result = {
+            "nome_do_arquivo": path_file,
+            "qtd_linhas": len(file),
+            "linhas_do_arquivo": file,
+        }
+
+        sys.stdout.write(str(result))
